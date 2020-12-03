@@ -1,32 +1,42 @@
+<style>
+    .navbar{
+        
+    }
+</style>
+
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <router-link class="navbar-brand" to="/">Navbar</router-link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/restaurantes">Restaurantes</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/mi-pedido">Mi pedido</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/nosotros">Nosotros</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container">
+            <div class="row">
+                <router-view/>
+            </div>
+        </main>
+    </section>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+    
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

@@ -1,6 +1,6 @@
 <template>
     <section class="col-md-12">
-        <h1>About</h1>
+        <h1>Restaurants</h1>
     </section>
 </template>
 
