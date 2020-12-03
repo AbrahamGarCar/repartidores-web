@@ -13,8 +13,8 @@ var firebaseConfig = {
     projectId: "repartidores-524ed",
     storageBucket: "repartidores-524ed.appspot.com",
     messagingSenderId: "468473832934",
-    appId: "1:468473832934:web:58a6c8e7450a06db9c2227",
-    measurementId: "G-N4TT14WPSE"
+    appId: "1:468473832934:web:8abc4fbed686128a9c2227",
+    measurementId: "G-WDMPDHEW0W"
   };
 
 // Initialize Firebase
