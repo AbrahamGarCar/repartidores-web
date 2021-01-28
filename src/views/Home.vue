@@ -51,6 +51,31 @@
         position: absolute;
         object-fit: cover;
     }
+
+    .card-restaurant{
+        width: 350px;
+        background-color: rgb(166, 3, 3);
+        border-radius: 5px;
+        color: white;
+    }
+
+    .card-image{
+        width: 350px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .card-image img{
+        width: 350px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .card-content{
+        padding: 10px;
+    }
+
 </style>
 
 <template>
@@ -72,12 +97,57 @@
 
         <div class="container mt-4">
             <div class="row">
-                <div class="col-md-6 d-flex justify-content-center align-items-center flex-column delivery-man-image">
-                    <h2>Siempre alguien dispuesto a ir por tu comida.</h2>
-                    <h5>¿Que esperas para disfrutar de algo delicioso?</h5>
+                <div class="col-md-6 delivery-man-image">
+                    <span style="color: orange; font-weight: bold;">-¿Que es fassst?</span>
+                    <div class="mt-2">
+                        <h2 style="font-weight: bold;">Un servicio mas barato para que disfrutes sin remordimiento.</h2>
+                        <div class="mt-2">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam officiis, atque dolore dolorem, fugiat autem temporibus, quo officia odit placeat nulla deserunt sunt voluptatem nobis at accusamus ad. Voluptatum, dolorum?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam officiis, atque dolore dolorem.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 delivery-man-image">
                     <img src="https://images.unsplash.com/photo-1548695607-9c73430ba065?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1484&q=80" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-4" style="background-color: #FEFAF9;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <span style="color: orange; font-weight: bold;">-¿A quienes puedes encontrar?</span>
+                                <div class="mt-2">
+                                    <h2 style="font-weight: bold;">Ellos han confiado <br> en nosotros.</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <carousel :perPage="3">
+                        <slide v-for="(item, index) in [1, 1, 1, 1]" :key="index">
+                            <div class="card-restaurant">
+                                <div class="card-image">
+                                    <img src="https://www.estrategiaynegocios.net/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=odNE8597L9WUhl7vSAQP5c$daE2N3K4ZzOUsqbU5sYtnNf8YBHb2I5k_VvfAtrW46FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg" alt="">
+                                </div>
+                                <div class="card-content">
+                                    <h4 style="font-weight: bold;">Burger King</h4>
+                                    <small>Comida rapida</small>
+
+                                    <div class="mt-2">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit architecto optio, velit eveniet, officiis quod maxime sint facilis deleniti totam laudantium perspiciatis, voluptas eos debitis. Quos dolore blanditiis minus architecto?</p>
+                                        <button class="btn btn-block btn-info rounded-0">Ordenar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </slide>
+                    </carousel>
                 </div>
             </div>
         </div>

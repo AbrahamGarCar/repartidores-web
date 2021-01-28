@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 
 import * as VueGoogleMaps from 'vue2-google-maps'
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
 
 Vue.use(VueGoogleMaps, {
   load: {

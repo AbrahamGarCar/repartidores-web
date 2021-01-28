@@ -1,4 +1,6 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+
     .nav-link{
         font-weight: bold;
     }
@@ -7,6 +9,11 @@
         color: white;
         background-color: #F29F05;
     }
+
+    *{
+        font-family: 'Francois One', sans-serif;
+    }
+    
 </style>
 
 <template>
