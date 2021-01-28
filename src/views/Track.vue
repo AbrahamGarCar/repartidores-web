@@ -130,9 +130,9 @@
 
 <template>
     <section class="col-md-12">
-        <div class="main-track d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex justify-content-center align-items-center flex-column">
             <div class="container">
-                <div class="row d-flex justify-content-center align-items-center">
+                <div class="mt-4 row d-flex justify-content-center align-items-center">
                     <div class="col-md-6 text-center">
                         <input v-model="orderNumber" placeholder="Numero de orden" type="number" width="100%" class="form-control rounded-4">
                         <button class="btn-search mt-2" @click="getOrder">BUSCAR</button>
@@ -186,6 +186,26 @@
                         </div>
                     </div>
                 </div>
+
+                <section class="mb-5">
+                    <GmapMap
+                        :center="{lat:28.7240734, lng:-106.1167789}"
+                        :zoom="15"
+                        style="width: 100%; height: 600px"
+                        >
+                        <GmapMarker
+                            :position="marker"
+                            :clickable="true"
+                            @click="center=marker"
+                        />
+                        <GmapMarker
+                            :position="destination"
+                            :clickable="true"
+                            @click="center=destination"
+                            :icon="markerOptions" />
+                        />
+                    </GmapMap>
+                </section>
             </div>
         </div>
     </section>
@@ -200,8 +220,24 @@ export default {
 
     data() {
         return {
+            markerOptions: {
+                url: 'https://icon-library.com/images/map-indicator-icon/map-indicator-icon-26.jpg',
+                size: {width: 60, height: 90, f: 'px', b: 'px',},
+                scaledSize: {width: 30, height: 45, f: 'px', b: 'px',},
+            },
+
             orderNumber: '',
             order: null,
+
+            marker: {
+                lat: 0,
+                lng: 0
+            },
+
+            destination: {
+                lat: 0,
+                lng: 0
+            }
         }
     },
 
@@ -220,6 +256,18 @@ export default {
                                         .onSnapshot(query => {
                                             query.forEach(doc => {
                                                 this.order = doc.data()
+
+                                                this.destination.lat = this.order.destination.w_
+                                                this.destination.lng = this.order.destination.E_
+
+                                                if (this.order.route == undefined || this.order.route.length == 0 || !this.order.route) {
+                                                    this.marker.lat = this.order.origin.w_
+                                                    this.marker.lng = this.order.origin.E_
+                                                }else{
+                                                    
+                                                    this.marker.lat = this.order.route[this.order.route.length - 1].latitude
+                                                    this.marker.lng = this.order.route[this.order.route.length - 1].longitude
+                                                }
                                             })
                                         })
             } catch (error) {
