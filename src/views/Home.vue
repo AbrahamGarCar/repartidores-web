@@ -76,6 +76,38 @@
         padding: 10px;
     }
 
+    .image-fluid-container{
+        width: 100%;
+        height: 1000px;
+        background-image: url('https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .image-fluid-container .layer{
+        width: 100%;
+        height: 1000px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 50;
+    }
+
+    .image-fluid-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        color: white;
+        z-index: 100;
+    }
+
 </style>
 
 <template>
@@ -130,7 +162,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <carousel :perPage="3">
+                    <carousel :perPage="4">
                         <slide v-for="(item, index) in [1, 1, 1, 1]" :key="index">
                             <div class="card-restaurant">
                                 <div class="card-image">
@@ -148,6 +180,19 @@
                             </div>
                         </slide>
                     </carousel>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12 image-fluid-container">
+                    <div class="layer" />
+                    <div class="image-fluid-content">
+                        <h2>Lorem Ipsum</h2>
+
+                        <div style="width: 50%;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ad quo veritatis optio at culpa incidunt earum exercitationem, quisquam eius quidem, blanditiis alias repellat aliquam, quam placeat asperiores tempora maxime?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
