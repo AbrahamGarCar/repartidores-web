@@ -7,12 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "algoliasearch": "^4.8.4",
     "core-js": "^3.6.5",
     "firebase": "^8.1.1",
     "flipbook-vue": "^0.10.1",
     "jquery": "^3.5.1",
     "jquery-mousewheel": "^3.1.13",
     "vue": "^2.6.11",
+    "vue-better-google-places-autocomplete": "^1.1.0",
     "vue-carousel": "^0.18.0",
     "vue-router": "^3.2.0",
     "vue2-google-maps": "^0.10.7",

@@ -7,6 +7,9 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 
+import { GooglePlacesAutocomplete } from 'vue-better-google-places-autocomplete'
+Vue.component('google-places-autocomplete', GooglePlacesAutocomplete)
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyDndG_C_5iRRkYDO3GHchQFNUchdBZvDas',
